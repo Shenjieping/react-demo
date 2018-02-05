@@ -27,6 +27,20 @@ let config = merge(baseWebpackConfig, {
 				use: ['babel-loader'],
 				include: [path.resolve(__dirname, '../../app'), path.resolve(__dirname, '../../entryBuild')],
 				exclude: [path.resolve(__dirname, '../../node_modules')]
+			},
+			{
+				test: /\.(css|pcss)$/,
+				loader: 'style-loader?sourceMap!css-loader?sourceMap!postcss-loader?souceMap',
+				exclude: /node_modules/
+			},
+			{
+				test: /\.(less)$/,
+				loader: 'style-loader?sourceMap!css-loader?sourceMap!less-loader?souceMap',
+				exclude: /node_modules/
+			},
+			{
+				test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg|swf)$/,
+				loader: 'file-loader?name=[name].[ext]&outputPath=' + webpackFile.resource + '/'
 			}
 		]
 	},

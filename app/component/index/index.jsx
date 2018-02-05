@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+// import '../../public/css/index.pcss';
+import '../../public/css/style.less';
 
 class Index extends Component {
 	constructor(props) {
@@ -20,9 +22,12 @@ class Index extends Component {
 	}
 	render() {
 		return (
-			<div>
-				这是首页
-				Seconds: {this.state.seconds}
+			<div className='cont'>
+				<div className='top'>这是头部</div>
+				<div className='bottom'>
+					Seconds: {this.state.seconds}
+				</div>
+				<div className='pngIcon'></div>
 			</div>
 		);
 	}
